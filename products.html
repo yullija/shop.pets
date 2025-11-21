@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>Магазин для собак</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #fff8f0;
+      margin: 0;
+      text-align: center;
+    }
+    header {
+      background-color: orange;
+      color: white;
+      padding: 15px;
+    }
+     nav {
+      background-color: #ffd699;
+      padding: 10px;
+    }
+    nav a {
+      text-decoration: none;
+      color: black;
+      margin: 0 15px;
+      font-weight: bold;
+    }
+    nav a:hover {
+      color: orange;
+    }
+    .product {
+      background-color: white;
+      width: 250px;
+      border: 2px solid #ffa726;
+      border-radius: 10px;
+      padding: 10px;
+      margin: 10px;
+      display: inline-block;
+      vertical-align: top;
+    }
+    .product img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+    .btn {
+      background-color: orange;
+      border: none;
+      color: white;
+      padding: 8px 15px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+    .btn:hover {
+      background-color: #ff9800;
+    }
+    footer {
+      background-color: orange;
+      color: white;
+      padding: 10px;
+      margin-top: 20px;
+    }
+  </style>
+  <script>
+    function buy(productName) {
+      // Зберігаємо назву товару в адресному рядку
+      window.location.href = "order.html?product=" + encodeURIComponent(productName);
+    }
+  </script>
+</head>
+<body>
+
+  <header>
+    <h1>🐾 Магазин для собак</h1>
+    <p>Все для вашого улюбленця!</p>
+  </header>
+
+  <nav>
+    <a href="index.html">Головна</a>
+    <a href="about.html">Про нас</a>
+    <a href="products.html">Товари</a>
+    <a href="contacts.html">Контакти</a>
+  </nav>
+
+  <div class="product">
+    <img src="photo/food1.webp" width="200px" height="250px" alt="Корм">
+    <h3>Сухий корм</h3>
+    <p>Повноцінне харчування для собак(chiken).</p>
+    <p><b>450 грн</b></p>
+    <button class="btn" onclick="buy('Сухий корм(chiken)')">Купити</button>
+  </div>
+
+  <div class="product">
+    <img src="photo/food2.webp" alt="Корм">
+    <h3>Сухий корм(beef)</h3>
+    <p>Повноцінне харчування для собак.</p>
+    <p><b>480 грн</b></p>
+    <button class="btn" onclick="buy('Сухий корм(beef)')">Купити</button>
+  </div>
+
+  <div class="product">
+    <img src="photo/food3.webp" alt="Корм">
+    <h3>Сухий корм(chiken)</h3>
+    <p>Повноцінне харчування для собак.</p>
+    <p><b>600 грн</b></p>
+    <button class="btn" onclick="buy('Сухий корм(chiken)')">Купити</button>
+  </div>
+
+  <div class="product">
+    <img src="photo/ball.webp" alt="Іграшка">
+    <h3>Іграшка для собак</h3>
+    <p>М’ячик для активних ігор.</p>
+    <p><b>120 грн</b></p>
+    <button class="btn" onclick="buy('Іграшку для собак(ball)')">Купити</button>
+  </div>
+
+   <div class="product">
+    <img src="photo/dog ring.webp" alt="Іграшка">
+    <h3>Іграшка для собак</h3>
+    <p>Кільце для активних ігор.</p>
+    <p><b>75 грн</b></p>
+    <button class="btn" onclick="buy('Іграшку для собак(кільце)')">Купити</button>
+  </div>
+
+   <div class="product">
+    <img src="photo/rope.jpg" alt="Іграшка">
+    <h3>Іграшка для собак</h3>
+    <p>Канат для активних ігор.</p>
+    <p><b>90 грн</b></p>
+    <button class="btn" onclick="buy('Іграшку для собак(канат)')">Купити</button>
+  </div>
+
+  <div class="product">
+    <img src="photo/jacket1.jpg" alt="Одяг">
+    <h3>Куртка</h3>
+    <p>Тепла курточка для прогулянок(дівчинці).</p>
+    <p><b>570 грн</b></p>
+    <button class="btn" onclick="buy('Куртку для собаки(дівчинці)')">Купити</button>
+  </div>
+
+  <div class="product">
+    <img src="photo/jacket2.jpg" alt="Одяг">
+    <h3>Куртка</h3>
+    <p>Тепла курточка для прогулянок(хлопчику).</p>
+    <p><b>570 грн</b></p>
+    <button class="btn" onclick="buy('Куртку для собаки(хлопчику)')">Купити</button>
+  </div>
+
+<div class="product">
+    <img src="photo/sweater.jpg" alt="Одяг">
+    <h3>Кофта</h3>
+    <p>Кофточка.</p>
+    <p><b>500 грн</b></p>
+    <button class="btn" onclick="buy('Кофточку')">Купити</button>
+  </div>
+
+  <div class="product">
+    <img src="photo/footwear.jpg" alt="Взуття">
+    <h3>Тапатулі</h3>
+    <p>Взуття для прогулянок.</p>
+    <p><b>460 грн</b></p>
+    <button class="btn" onclick="buy('Тапатулі')">Купити</button>
+  </div>
+
+  <footer>
+
+</body>
+</html>
+

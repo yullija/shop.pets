@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>Оформлення замовлення</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #fff8f0;
+      text-align: center;
+      margin: 0;
+    }
+    header {
+      background-color: orange;
+      color: white;
+      padding: 15px;
+    }
+    .form-container {
+      background-color: white;
+      width: 300px;
+      margin: 30px auto;
+      padding: 20px;
+      border: 2px solid #ffa726;
+      border-radius: 10px;
+      text-align: left;
+    }
+    input {
+      width: 95%;
+      padding: 8px;
+      margin: 5px 0;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    .btn {
+      background-color: orange;
+      border: none;
+      color: white;
+      padding: 8px 15px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+    .btn:hover {
+      background-color: #ff9800;
+    }
+    footer {
+      background-color: orange;
+      color: white;
+      padding: 10px;
+      margin-top: 30px;
+    }
+  </style>
+  <script>
+    // Отримати товар із адресного рядка
+    window.onload = function() {
+      const params = new URLSearchParams(window.location.search);
+      const product = params.get("product");
+      if (product) {
+        document.getElementById("productName").textContent = product;
+      }
+    }
+
+    // Надсилання форми
+    function sendOrder() {
+      const name = document.getElementById("name").value;
+      const phone = document.getElementById("phone").value;
+      const product = document.getElementById("productName").textContent;
+
+      if (name === "" || phone === "") {
+        alert("Будь ласка, заповніть усі поля!");
+      } else {
+        alert("Дякуємо, " + name + "! Ви замовили: " + product + ". Ми зв’яжемось із вами за номером " + phone + ".");
+        window.location.href = "index.html"; // повертає на головну
+      }
+    }
+  </script>
+</head>
+<body>
+
+  <header>
+    <h1>🛒 Оформлення замовлення</h1>
+  </header>
+
+  <div class="form-container">
+    <h3>Ви купуєте: <span id="productName">Товар</span></h3>
+    <label>Ваше ім’я:</label><br>
+    <input type="text" id="name" placeholder="Введіть ім’я"><br>
+    <label>Номер телефону:</label><br>
+    <input type="text" id="phone" placeholder="+380..."><br><br>
+    <button class="btn" onclick="sendOrder()">Підтвердити</button>
+  </div>
+
+  <footer>
+
+</body>
+</html>
