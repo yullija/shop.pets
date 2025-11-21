@@ -1,11 +1,51 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uk">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <title>Магазин Pets</title>
+  <script src="https://cdn.jsdelivr.net/gh/wojodesign/simplecart-js/simpleCart.min.js"></script>
 </head>
 <body>
-    
+  <header>
+    <div id="cart">
+      <h2>Кошик</h2>
+      <div class="simpleCart_items"></div>
+      <div>Разом: <span class="simpleCart_total"></span></div>
+      <a href="javascript:;" class="simpleCart_empty">Очистити</a>
+      <a href="javascript:;" class="simpleCart_checkout">Оформити</a>
+    </div>
+  </header>
+
+  <main>
+    <div class="product-list">
+      <div class="simpleCart_shelfItem product">
+        <img src="cat.jpg" alt="Кіт" class="item_thumb">
+        <h3 class="item_name">Кіт</h3>
+        <span class="item_price">10.00</span>
+        <a href="javascript:;" class="item_add">Додати в кошик</a>
+      </div>
+      <!-- інші товари ... -->
+    </div>
+  </main>
+
+  <script>
+    simpleCart({
+      cartColumns: [
+        { attr: "name", label: "Товар" },
+        { attr: "price", label: "Ціна", view: 'currency' },
+        { view: "decrement", label: false, text: "-" },
+        { attr: "quantity", label: "Кількість" },
+        { view: "increment", label: false, text: "+" },
+        { attr: "total", label: "Сума", view: 'currency' },
+        { view: "remove", text: "Видалити", label: false }
+      ],
+      cartStyle: "div",
+      checkout: {
+        type: "PayPal",
+        email: "твій@email.com"
+      },
+      currency: "USD"
+    });
+  </script>
 </body>
 </html>
